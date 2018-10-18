@@ -1,0 +1,183 @@
+{
+	"general": {
+		"src": "../src/app",
+		"dest": {
+			"dev": "../src",
+			"prod": "../dist"
+		},
+		"assets": "/assets"
+	},
+	"tasks": {
+		"dev": [
+			{
+				"task": "copy",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/**/*.*",
+					"!**/**/**/*.{css,scss,sass,ts,coffee,php,html,twig,njk,blade,jpeg,jpg,gif,png,svg,ico}"
+				],
+				"dest": "/assets"
+			},
+			{
+				"task": "icons",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/*icon*.svg",
+					"**/**/icons/*.svg"
+				],
+				"dest": "/assets/icons"
+			},
+			{
+				"task": "graphics",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/*.{jpg,jpeg,gif,png,ico}"
+				],
+				"dest": "/assets/graphics"
+			},
+			{
+				"task": "scripts",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/**/*.js"
+				],
+				"dest": "/assets/scripts",
+				"options": {
+					"filename": "main.js"
+				}
+			},
+			{
+				"task": "styles",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/*.{css,sass,scss}"
+				],
+				"dest": "/assets/styles",
+				"options": {
+					"browserSupport": [
+						"ie >= 10",
+						"last 1 Firefox version",
+						"last 1 Chrome version",
+						"last 1 Opera version"
+					]
+				}
+			},
+			{
+				"task": "svg",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/*.svg",
+					"!**/**/icons/*.svg",
+					"!**/**/*icon*.svg"
+				],
+				"dest": "/assets/svg"
+			},
+			{
+				"task": "browser",
+				"active": false,
+				"options": {
+					"port": 9999,
+					"online": true,
+					"notify": false
+				}
+			}
+		],
+		"prod": [
+			{
+				"task": "copy",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/**/*.*",
+					"!**/**/**/*.{css,scss,sass,ts,coffee,php,html,twig,njk,blade,jpeg,jpg,gif,png,svg,ico}"
+				],
+				"dest": "/assets"
+			},
+			{
+				"task": "copy2",
+				"active": true,
+				"watch": false,
+				"src": [
+					"../**/**/**/*.{htm,html,twig,hb,hbs,php}",
+					"../readme.md",
+					"../thumbnail.png"
+				],
+				"dest": "/"
+			},
+			{
+				"task": "icons",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/*icon*.svg",
+					"**/**/icons/*.svg"
+				],
+				"dest": "/assets/icons"
+			},
+			{
+				"task": "graphics",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/*.{jpg,jpeg,gif,png,ico}"
+				],
+				"dest": "/assets/graphics"
+			},
+			{
+				"task": "scripts",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/*.js"
+				],
+				"dest": "/assets/scripts",
+				"options": {
+					"filename": "main.js"
+				}
+			},
+			{
+				"task": "styles",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/*.{css,sass,scss}"
+				],
+				"dest": "/assets/styles",
+				"options": {
+					"browserSupport": [
+						"ie >= 10",
+						"last 1 Firefox version",
+						"last 1 Chrome version",
+						"last 1 Opera version"
+					]
+				}
+			},
+			{
+				"task": "svg",
+				"active": true,
+				"watch": true,
+				"src": [
+					"**/**/*.svg",
+					"!**/**/icons/*.svg",
+					"!**/**/*icon*.svg"
+				],
+				"dest": "/assets/svg"
+			},
+			{
+				"task": "browser",
+				"active": false,
+				"options": {
+					"port": 9999,
+					"online": true,
+					"notify": false
+				}
+			}
+		]
+	}
+}
